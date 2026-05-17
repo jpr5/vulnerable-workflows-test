@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Welcome message
+        env:
+            PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
-          echo "Thanks for the PR: ${{ github.event.pull_request.title }}"
+          echo "Thanks for the PR: $PR_TITLE"
           echo "From: ${{ github.event.pull_request.user.login }}"
