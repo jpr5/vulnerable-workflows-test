@@ -1,0 +1,13 @@
+name: Greet PR
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome message
+        run: |
+          echo "Thanks for the PR: ${{ github.event.pull_request.title }}"
+          echo "From: ${{ github.event.pull_request.user.login }}"

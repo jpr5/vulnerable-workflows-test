@@ -1,0 +1,15 @@
+name: Setup
+on: push
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install toolchain
+        run: curl -fsSL https://example.com/install.sh | bash
+      - name: Configure
+        run: |
+          echo "Setting up..."
+        env:
+          API_KEY: "HARDCODED_NOT_A_REAL_KEY_just_testing_sentinel"
